@@ -1,6 +1,7 @@
 <?php 
     session_start();
     require_once __DIR__ . "/functions.php";
+    var_dump($_GET['length']);
     if(!empty($_GET['length'])){
         $result = get_password($_GET['length']);
     }
@@ -12,8 +13,7 @@
         die;
     }else{
         $_SESSION['error'] = $result['error'];
-        header("Location: index.php");
-        
+        header("Location: index.php");  
     }
     die();
 ?>
